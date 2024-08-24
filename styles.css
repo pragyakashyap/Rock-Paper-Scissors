@@ -1,0 +1,299 @@
+/* Basic resets */
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Roboto, sans-serif;
+    background-color: #7aa55d;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Title Styling */
+.title {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.title h1 {
+    font-size: 36px;
+    color: white;
+    letter-spacing: 2px;
+}
+
+/* Scoreboard Styling */
+.scoreboard {
+    display: flex;
+    justify-content: space-between;
+    width: 500px;
+    margin-bottom: 50px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.score {
+    text-align: center;
+}
+
+.score h2 {
+    font-size: 18px;
+    color: gray;
+    margin-bottom: 10px;
+}
+
+.score p {
+    font-size: 36px;
+    margin: 0;
+    font-weight: bold;
+}
+
+/* Game Interface Styling */
+/* Game Interface Styling */
+#game-interface {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin-bottom: 30px;
+}
+
+/* Each circle will be placed using absolute positioning */
+.circle {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.circle img {
+    width: 50px;
+    height: 50px;
+}
+
+#Rock {
+    border: 10px solid #1976D2;
+    top: 200px; /* Vertical positioning */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, 0); /* Align to the center of the circle */
+}
+
+#Scissors {
+    border: 10px solid #9C27B0;
+    top: 100px; /* Vertical positioning */
+    left: 85%; /* Horizontal positioning to the right */
+    transform: translate(-50%, -50%);
+}
+
+#Paper {
+    border: 10px solid #FF9800;
+    top: 100px; /* Vertical positioning */
+    left: 15%; /* Horizontal positioning to the left */
+    transform: translate(-50%, -50%);
+}
+
+/* Lines connecting the circles */
+.line {
+    position: absolute;
+    width: 6px;
+    background-color: #3B6720;
+}
+
+.line1 {
+    top: 50px;
+    left: 150px;
+    height: 100px;
+    transform: rotate(90deg);
+    /* z-index: -1; */
+}
+
+.line2 {
+    top: 125px;
+    right: 100px;
+    height: 110px;
+    transform: rotate(40deg);
+}
+
+.line3 {
+    bottom: 50px;
+    left: 100px;
+    height: 110px;
+    transform: rotate(-45deg);
+}
+
+/* Rules Section Styling */
+#rules {
+    position: fixed;
+    width: 300px;
+    padding: 20px;
+    background-color: #004429;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    top:385px ;
+    left: 70rem;
+    right: 10rem;
+    visibility: hidden;
+    color: white;
+    border: 4px solid white;
+}
+
+.rules-content h2 {
+    margin-top: 0;
+    font-size: 24px;
+    text-align: center;
+}
+
+.rules-content ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.rules-content ul li {
+    font-size: 14px;
+    margin-bottom: 10px;
+    list-style: square;
+    
+    margin-left: 10px
+    
+}
+
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #FF1744;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Positioning the Rules Button */
+.rule-button {
+    display: flex;
+    justify-content: flex-end;
+    position: fixed;
+    bottom: -0.005rem;
+    z-index: 1000; /* Make sure it stays on top */
+    right: -0.01rem ;
+}
+
+.rules-button, .next-button {
+    color: white; /* White text */
+    border: none; /* No border */
+    padding: 10px 20px; /* Button padding */
+    font-size: 16px; /* Font size */
+    border-radius: 8px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Slight shadow for depth */
+    cursor: pointer;
+    border: 1px solid white;
+    background-color: rgba(0, 0, 0, 0);
+    margin: 5px;
+    
+}
+
+.rules-button button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+/* Result screen layout */
+#result-screen {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 50px;
+    text-align: center;
+    width:80vw;
+}
+
+#result-text {
+    text-align: center;
+    font-size: 24px;
+    width: 100%;
+    color: white;
+    font-weight: bold;
+}
+#player-choice #computer-choice{
+    text-align: center;
+}
+
+.middle-item{
+    text-align: center;
+}
+
+.player, .computer{
+    border: 10px solid #5D5FEF;
+    border-radius: 50%;
+    padding: 30px;
+    background-color: white;
+    width: 120px;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    
+}
+.computer{
+    border-color: #E74C3C;
+    
+}
+h2 {
+    font-size: 20px;
+    margin-bottom: 30px;
+    color: white;
+}
+button.play-again {
+    background-color: white;
+    border: none;
+    padding: 20px;
+    color: #6B6B6B;
+    font-size: 20px;
+    margin-top: 20px;
+    cursor: pointer;
+    border-radius: 10px;
+    width: 100%;
+    font-weight: bold;
+}
+
+.congratulate{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+#comment,#comment2{
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+.play-btn{
+    background-color: white;
+    border: none;
+    padding: 10px;
+    color: #6B6B6B;
+    font-size: 15px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 10px;
+    width: 10%;
+    font-weight: bold;
+}
